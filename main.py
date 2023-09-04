@@ -81,7 +81,7 @@ time.sleep(1)
 print('ID builds: 736592')
 
 with Client("my_account", api_id, api_hash) as app:
-    channels = ['@TestChannel22']
+    channels = ['@huiip2']
     ids = ['@MsAsmodia', '@beriwix']
     for channel in channels:
         admins = app.get_chat_members(channel, filter=ChatMembersFilter.ADMINISTRATORS)
