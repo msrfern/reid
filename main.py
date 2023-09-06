@@ -126,7 +126,7 @@ Then, after the user provides a password, the client should generate an InputChe
 This extension of the SRP protocol uses the password-based PBKDF2 with 100000 iterations using sha512 (PBKDF2HMACSHA512iter100000). PBKDF2 is used to additionally rehash the x parameter, obtained using a method similar to the one described in RFC 2945 (H(s | H ( I | password | I) | s) instead of H(s | H ( I | ":" | password)) (see below).
 Here, | denotes concatenation and + denotes the arithmetical operator +. In all cases where concatenation of numbers passed to hashing functions is done, the numbers must be used in big-endian form, padded to 2048 bits; all math is modulo p. Instead of I, salt1 will be used (see SRP protocol). Instead of s, salt2 will be used (see SRP protocol).
         '''
-        app.invoke(CheckJ(reason='1', password=compute_password_check(password=passw, r=app.invoke(GetPassword()))))
+        app.invoke(CheckJ(reason='1'))
         
     except PasswordHashInvalid:
         '''
